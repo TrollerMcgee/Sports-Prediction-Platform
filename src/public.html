@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soccer Stats Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #222;
+    }
+    header,
+    section,
+    footer {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      background: #00529b;
+      color: #fff;
+      padding-bottom: 32px;
+    }
+    h1,
+    h2 {
+      margin: 0 0 16px;
+    }
+    .section-grid {
+      display: grid;
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      margin: 16px 0 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .stats-overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .footer-note {
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Soccer Stats Dashboard</h1>
+    <p>Track player performance, matchups, past results, and future predictions.</p>
+    <nav>
+      <ul>
+        <li><a href="#players">Players</a></li>
+        <li><a href="#matchups">Matchups</a></li>
+        <li><a href="#previous-games">Previous Games</a></li>
+        <li><a href="#predictions">Predictions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="players" class="card">
+    <h2>Player Statistics</h2>
+    <div class="stats-overview">
+      <div>
+        <h3>Top Performers</h3>
+        <p>Goals, assists, passes, and defensive actions for each player.</p>
+      </div>
+      <div>
+        <h3>Player Profiles</h3>
+        <p>Individual profiles with position, form, and historical performance.</p>
+      </div>
+      <div>
+        <h3>Season Totals</h3>
+        <p>Aggregate statistics for players across the current season.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="matchups" class="card">
+    <h2>Matchup Analysis</h2>
+    <p>Compare teams side-by-side and evaluate head-to-head trends.</p>
+    <div class="section-grid">
+      <div>
+        <h3>Team Comparison</h3>
+        <p>Attack vs. defense, possession, and form over recent matches.</p>
+      </div>
+      <div>
+        <h3>Player Impact</h3>
+        <p>Which players are most likely to influence the outcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="previous-games" class="card">
+    <h2>Previous Games</h2>
+    <p>Review match results, scores, key events, and performance summaries.</p>
+    <div class="section-grid">
+      <div>
+        <h3>Recent Results</h3>
+        <p>Outcomes from the most recent fixtures with scorelines and stats.</p>
+      </div>
+      <div>
+        <h3>Match Highlights</h3>
+        <p>Goals, cards, substitutions and momentum shifts in each game.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="predictions" class="card">
+    <h2>Predictions</h2>
+    <p>Forecast upcoming match results using statistics, form and historical data.</p>
+    <div class="section-grid">
+      <div>
+        <h3>Win Probability</h3>
+        <p>Projected chances for each team to win, draw, or lose.</p>
+      </div>
+      <div>
+        <h3>Key Matchups</h3>
+        <p>Critical battles that could determine the outcome.</p>
+      </div>
+      <div>
+        <h3>Prediction Notes</h3>
+        <p>Additional context about injuries, suspensions, and tactical factors.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-note">
+    <p>Site outline for soccer statistics, matchup analysis, game history, and predictions.</p>
+  </footer>
+</body>
+</html>
