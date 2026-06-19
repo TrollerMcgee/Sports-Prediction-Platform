@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result | CloudPlay</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/">CloudPlay</a>
+
+        <div>
+            <a href="/games">Games</a>
+            <a href="/leaderboard">Leaderboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="result-card">
+            <% if (success) { %>
+                <p class="status success">Prediction Submitted</p>
+            <% } else { %>
+                <p class="status error">Submission Failed</p>
+            <% } %>
+
+            <h1><%= message %></h1>
+
+            <div class="buttons">
+                <a class="primary-button" href="/games">
+                    Back to Games
+                </a>
+
+                <a class="secondary-button" href="/leaderboard">
+                    View Leaderboard
+                </a>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

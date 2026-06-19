@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard | CloudPlay</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/">CloudPlay</a>
+
+        <div>
+            <a href="/games">Games</a>
+            <a href="/leaderboard">Leaderboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <p class="label">Competition Rankings</p>
+        <h1>CloudPlay Leaderboard</h1>
+
+        <% if (users.length === 0) { %>
+
+            <section class="empty-state">
+                <h2>No predictions yet</h2>
+                <p>
+                    Submit a prediction to become the first participant.
+                </p>
+
+                <a class="primary-button" href="/games">
+                    Make a Prediction
+                </a>
+            </section>
+
+        <% } else { %>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Points</th>
+                        <th>Total Predictions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% users.forEach((user, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= user.username %></td>
+                            <td><%= user.points %></td>
+                            <td><%= user.totalPredictions %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+        <% } %>
+    </main>
+
+</body>
+</html>

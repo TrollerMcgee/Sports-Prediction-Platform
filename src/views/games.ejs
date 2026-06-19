@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games | CloudPlay</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/">CloudPlay</a>
+
+        <div>
+            <a href="/games">Games</a>
+            <a href="/leaderboard">Leaderboard</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <p class="label">Upcoming Games</p>
+        <h1>Make your prediction</h1>
+
+        <p>
+            Select the team you believe will win. One correct prediction
+            will earn one competition point.
+        </p>
+
+        <div class="game-grid">
+            <% games.forEach(game => { %>
+
+                <section class="game-card">
+                    <p class="game-date"><%= game.gameDate %></p>
+
+                    <h2>
+                        <%= game.awayTeam %>
+                        <span>vs.</span>
+                        <%= game.homeTeam %>
+                    </h2>
+
+                    <form action="/predictions" method="POST">
+                        <input
+                            type="hidden"
+                            name="gameId"
+                            value="<%= game.gameId %>"
+                        >
+
+                        <label for="username-<%= game.gameId %>">
+                            Username
+                        </label>
+
+                        <input
+                            id="username-<%= game.gameId %>"
+                            type="text"
+                            name="username"
+                            placeholder="Enter your username"
+                            required
+                        >
+
+                        <label for="winner-<%= game.gameId %>">
+                            Predicted winner
+                        </label>
+
+                        <select
+                            id="winner-<%= game.gameId %>"
+                            name="predictedWinner"
+                            required
+                        >
+                            <option value="">Select a team</option>
+                            <option value="<%= game.awayTeam %>">
+                                <%= game.awayTeam %>
+                            </option>
+                            <option value="<%= game.homeTeam %>">
+                                <%= game.homeTeam %>
+                            </option>
+                        </select>
+
+                        <button type="submit">
+                            Submit Prediction
+                        </button>
+                    </form>
+                </section>
+
+            <% }) %>
+        </div>
+    </main>
+
+</body>
+</html>
